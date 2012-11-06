@@ -13,6 +13,9 @@ var DIC = {
             var unread = $res.find(Config.Settings.unreadSelector);
             var rows = unread.parent().parent();
             if (callback) callback(rows);
+        }).fail(function (xhr, status){
+		    console.log(status);
+		    Tools.setErrorBadge();
         });
     }
 };
